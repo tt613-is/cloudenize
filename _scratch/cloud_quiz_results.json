@@ -1,0 +1,72 @@
+[
+  {
+    "filename": "01_cirrus.jpg",
+    "actual_cn": "卷云",
+    "actual_en": "Cirrus",
+    "gpt_answer": "Step 1 – Altitude cues: The clouds appear high, as they are thin, icy, and wispy.\n\nStep 2 – Shape/texture: The clouds are wispy/fibrous.\n\nStep 3 – Coverage: The clouds appear as individual wispy strands rather than covering the whole sky.\n\nStep 4 – Sun visibility: Not applicable, as the clouds are not thick enough to obstruct the sun entirely.\n\nCloud type: Cirrus",
+    "correct": true
+  },
+  {
+    "filename": "02_cirrocumulus.jpg",
+    "actual_cn": "卷积云",
+    "actual_en": "Cirrocumulus",
+    "gpt_answer": "Step 1 – Altitude cues: The cloud appears HIGH, as it is thin and wispy.\n\nStep 2 – Shape/texture: It shows a fish-scale or ripple pattern.\n\nStep 3 – Coverage: It appears as individual puffs/patches.\n\nStep 4 – Sun visibility: The sun is clearly visible.\n\nCloud type: Cirrocumulus",
+    "correct": true
+  },
+  {
+    "filename": "03_cirrostratus.jpg",
+    "actual_cn": "卷层云",
+    "actual_en": "Cirrostratus",
+    "gpt_answer": "Step 1 – Altitude cues: The cloud appears HIGH (thin, icy, wispy).\n\nStep 2 – Shape/texture: (a) wispy/fibrous.\n\nStep 3 – Coverage: It covers the whole sky as a sheet.\n\nStep 4 – Sun visibility: The sun is (2) visible as a blurry disk with a halo.\n\nCloud type: Cirrostratus",
+    "correct": true
+  },
+  {
+    "filename": "04_altocumulus.jpg",
+    "actual_cn": "高积云",
+    "actual_en": "Altocumulus",
+    "gpt_answer": "Step 1 – Altitude cues: The clouds appear as MID-level with a patchy appearance.\n\nStep 2 – Shape/texture: They have a (c) lumpy/puffy patchy pattern.\n\nStep 3 – Coverage: The clouds appear as individual puffs/patches.\n\nStep 4 – Sun visibility: The sun is not shown, but it's likely visible as a blurry disk due to the cloud coverage.\n\nCloud type: Altocumulus",
+    "correct": true
+  },
+  {
+    "filename": "05_altostratus.jpg",
+    "actual_cn": "高层云",
+    "actual_en": "Altostratus",
+    "gpt_answer": "Step 1 – Altitude cues: The cloud appears to be MID-level (gray layer).\n\nStep 2 – Shape/texture: It appears as a uniform gray sheet.\n\nStep 3 – Coverage: It covers a large portion of the sky as a sheet.\n\nStep 4 – Sun visibility: The sun is not clearly visible; it’s likely behind the clouds.\n\nCloud type: Altostratus",
+    "correct": true
+  },
+  {
+    "filename": "06_nimbostratus.jpg",
+    "actual_cn": "雨层云",
+    "actual_en": "Nimbostratus",
+    "gpt_answer": "Step 1 – Altitude cues: The cloud appears MID-level (gray layer).\n\nStep 2 – Shape/texture: It is (b) uniform gray sheet.\n\nStep 3 – Coverage: It covers the whole sky as a sheet.\n\nStep 4 – Sun visibility: The sun is (1) completely hidden.\n\nCloud type: Altostratus",
+    "correct": false
+  },
+  {
+    "filename": "07_stratus.jpg",
+    "actual_cn": "层云",
+    "actual_en": "Stratus",
+    "gpt_answer": "Step 1 – Altitude cues: The cloud appears LOW as it looks thick and close to the ground.\n\nStep 2 – Shape/texture: It is (b) uniform gray sheet.\n\nStep 3 – Coverage: It covers the whole sky as a sheet.\n\nStep 4 – Sun visibility: The sun is (1) completely hidden.\n\nCloud type: Stratus",
+    "correct": true
+  },
+  {
+    "filename": "08_stratocumulus.jpg",
+    "actual_cn": "层积云",
+    "actual_en": "Stratocumulus",
+    "gpt_answer": "Step 1 – Altitude cues: The cloud appears MID-level, as it forms a gray layer with patchiness.\n\nStep 2 – Shape/texture: The cloud appears to have (c) lumpy/puffy patches in a layer.\n\nStep 3 – Coverage: The cloud covers a large portion of the sky but is not a complete sheet.\n\nStep 4 – Sun visibility: The sun is not visible in the image.\n\nBased on this analysis, the most likely cloud type is Altostratus.\n\nCloud type: Altostratus",
+    "correct": false
+  },
+  {
+    "filename": "09_cumulus.jpg",
+    "actual_cn": "积云",
+    "actual_en": "Cumulus",
+    "gpt_answer": "Step 1 – Altitude cues: The clouds appear LOW as they are thick and close to the ground.\n\nStep 2 – Shape/texture: The clouds are (c) lumpy/puffy patches in a layer.\n\nStep 3 – Coverage: The clouds appear as individual puffs/patches.\n\nStep 4 – Sun visibility: The sun is clearly visible, but not directly shown in the image.\n\nCloud type: Cumulus",
+    "correct": true
+  },
+  {
+    "filename": "10_cumulonimbus.jpg",
+    "actual_cn": "积雨云",
+    "actual_en": "Cumulonimbus",
+    "gpt_answer": "Step 1 – Altitude cues: The cloud appears high with a large, distinctive anvil shape at the top, suggesting it's a storm cloud that has developed upwards.\n\nStep 2 – Shape/texture: The cloud has a large puffy tower with an anvil top.\n\nStep 3 – Coverage: It appears as a single large cloud with a distinct shape rather than covering the whole sky as a sheet.\n\nStep 4 – Sun visibility: The sun appears to be unobstructed by this cloud, implying that it does not cover the entire sky.\n\nCloud type: Cumulonimbus",
+    "correct": true
+  }
+]
