@@ -97,6 +97,14 @@ export default function Home() {
       useCORS: true,
       scale: 3,
       backgroundColor: null,
+      onclone: (_doc, el) => {
+        // ::before (plastic sheen) and ::after (top rim) are screen-only decorations.
+        // html2canvas renders them as opaque white overlays, producing a grey band
+        // and a visible seam line in the saved image. Strip them for the capture.
+        const style = el.ownerDocument.createElement("style");
+        style.textContent = ".polaroid-card::before, .polaroid-card::after { display: none !important; }";
+        el.ownerDocument.head.appendChild(style);
+      },
     });
     const link = document.createElement("a");
     link.download = `cloud-${result.result.cloudTypeEn.toLowerCase()}-${Date.now()}.png`;
