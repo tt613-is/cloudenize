@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cloudenize
+
+Upload a cloud photo and get a polaroid-style memory card — complete with the cloud type, a poetic Chinese description, and the season it evokes.
+
+Recognizes both real meteorological clouds (10 types) and fantasy clouds — cartoons, kawaii illustrations, 3D renders, art installations. Real clouds get their proper scientific name. Fantasy clouds get an invented poetic name. The card looks the same either way.
+
+**Stack:** Next.js 16 · GPT-4o vision · TypeScript
+
+---
 
 ## Getting Started
 
-First, run the development server:
+Set your OpenAI API key:
+
+```bash
+echo "OPENAI_API_KEY=sk-..." > .env.local
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). Upload a cloud photo. Get a card.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Debug mode:** add `?debug=1` to the URL to show the image URL input field.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Cloud Types
 
-To learn more about Next.js, take a look at the following resources:
+**Real (meteorological):**
+卷云 · 积云 · 层云 · 积雨云 · 高积云 · 卷积云 · 卷层云 · 高层云 · 雨层云 · 层积云
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Fantasy:**
+梦境积云 · 彩霞幻云 · 星织云 · 画境云 · 糖棉云 · 水墨幻云 · 童话云 · (or a freely invented name)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+app/
+  page.tsx           — main upload + card UI
+  api/generate/      — GPT-4o vision API route
+components/frames/
+  PolaroidFrame.tsx  — card renderer
+lib/
+  cloudIdentify.ts   — GPT-4o prompt + response parsing
+types/
+  cloud.ts           — CloudType, CloudIdentifyResult
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Deploy
+
+```bash
+npm run build
+```
+
+Deploy to any platform that supports Next.js (Vercel, Railway, etc.). Set `OPENAI_API_KEY` in the environment.
