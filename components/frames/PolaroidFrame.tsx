@@ -37,7 +37,6 @@ export default function PolaroidFrame({ imageUrl, result }: Props) {
           src={imageUrl}
           alt="cloud"
           className="w-full h-full object-cover"
-          crossOrigin="anonymous"
           style={{ filter: "contrast(1.06) saturate(1.10) brightness(1.01)" }}
         />
         {/* Chemical film iridescent sheen */}
