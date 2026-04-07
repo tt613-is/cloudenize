@@ -295,16 +295,6 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Cloud info */}
-          <div
-            className="w-full max-w-md rounded-xl px-6 py-5 text-base leading-relaxed"
-            style={{ background: "#fff", border: "1px solid #ede8e0", color: "#7a6a5a" }}
-          >
-            <div className="font-medium mb-1" style={{ color: "#4a3828" }}>
-              {result.result.cloudType}
-            </div>
-            <p style={{ fontSize: 14, lineHeight: 1.9 }}>{result.result.description}</p>
-          </div>
         </div>
       )}
 
