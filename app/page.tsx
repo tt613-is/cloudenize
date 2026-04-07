@@ -96,17 +96,7 @@ export default function Home() {
     const canvas = await html2canvas(cardRef.current, {
       useCORS: true,
       scale: 3,
-      backgroundColor: "#f8f8f8",
-      imageTimeout: 0,
-      onclone: (_, el) => {
-        // Remove the ::after specular rim — it renders as a visible stripe in html2canvas
-        const style = document.createElement("style");
-        style.textContent = ".polaroid-card::after { display: none !important; }";
-        el.ownerDocument.head.appendChild(style);
-        // Remove crossOrigin from images — base64 data URLs don't need CORS,
-        // but crossOrigin="anonymous" causes the cloned image to fail loading
-        el.querySelectorAll("img").forEach((img) => img.removeAttribute("crossorigin"));
-      },
+      backgroundColor: null,
     });
     const link = document.createElement("a");
     link.download = `cloud-${result.result.cloudTypeEn.toLowerCase()}-${Date.now()}.png`;
