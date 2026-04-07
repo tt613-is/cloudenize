@@ -98,16 +98,16 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col items-center px-4 py-10"
-      style={{ background: "#f8f6f2" }}>
+      style={{ background: "radial-gradient(ellipse at 60% 20%, #ede5d8 0%, #e0d5c4 40%, #d4c9b6 100%)" }}>
       {/* Header */}
       <header className="mb-12 text-center">
         <h1
           className="tracking-widest text-3xl font-light"
-          style={{ color: "#5a4a3a", letterSpacing: "0.35em", fontFamily: "Georgia, serif" }}
+          style={{ color: "#3d2f1e", letterSpacing: "0.45em", fontFamily: "Georgia, serif" }}
         >
           CLOUDENIZE
         </h1>
-        <p className="mt-3 text-base" style={{ color: "#a09080" }}>
+        <p className="mt-3 text-sm italic" style={{ color: "#8a7560", letterSpacing: "0.18em" }}>
           给你的云一次生命
         </p>
       </header>
@@ -166,10 +166,11 @@ export default function Home() {
               onClick={() => fileInputRef.current?.click()}
               className="w-full rounded-xl py-8 flex flex-col items-center gap-3 transition-opacity hover:opacity-80"
               style={{
-                background: "#fff",
-                border: "2px dashed #ddd8d0",
+                background: "rgba(255,252,248,0.7)",
+                border: "1.5px dashed #b8a892",
                 cursor: "pointer",
-                color: "#7a6a5a",
+                color: "#5a4a36",
+                boxShadow: "0 4px 24px rgba(90,60,30,0.08)",
               }}
             >
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a09080" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -177,8 +178,8 @@ export default function Home() {
                 <polyline points="17 8 12 3 7 8"/>
                 <line x1="12" y1="3" x2="12" y2="15"/>
               </svg>
-              <span className="text-base" style={{ letterSpacing: "0.05em" }}>上传云照片</span>
-              <span className="text-sm" style={{ color: "#b0a090" }}>支持 JPG、PNG、HEIC</span>
+              <span className="text-base" style={{ letterSpacing: "0.06em" }}>上传云照片</span>
+              <span className="text-sm" style={{ color: "#9a8878" }}>支持 JPG、PNG、HEIC</span>
             </button>
           )}
 
@@ -212,9 +213,9 @@ export default function Home() {
             disabled={loading || !hasImage}
             className="w-full rounded-xl py-4 text-base tracking-widest transition-opacity"
             style={{
-              background: loading ? "#c0b0a0" : "#5a4a3a",
-              color: "#f8f6f2",
-              letterSpacing: "0.2em",
+              background: loading ? "#c0b0a0" : "#4a3828",
+              color: "#f0ead8",
+              letterSpacing: "0.22em",
               opacity: loading || !hasImage ? 0.6 : 1,
               cursor: loading ? "wait" : "pointer",
               border: "none",
@@ -231,7 +232,7 @@ export default function Home() {
                 style={{
                   width: 38, height: 38,
                   border: "3px solid #ddd8d0",
-                  borderTopColor: "#5a4a3a",
+                  borderTopColor: "#4a3828",
                   borderRadius: "50%",
                 }}
               />
@@ -270,7 +271,7 @@ export default function Home() {
               onClick={handleDownload}
               className="px-6 py-3 rounded-full text-base tracking-wider"
               style={{
-                background: "#5a4a3a",
+                background: "#4a3828",
                 color: "#f8f6f2",
                 border: "none",
                 cursor: "pointer",
@@ -299,7 +300,7 @@ export default function Home() {
             className="w-full max-w-md rounded-xl px-6 py-5 text-base leading-relaxed"
             style={{ background: "#fff", border: "1px solid #ede8e0", color: "#7a6a5a" }}
           >
-            <div className="font-medium mb-1" style={{ color: "#5a4a3a" }}>
+            <div className="font-medium mb-1" style={{ color: "#4a3828" }}>
               {result.result.cloudType}
             </div>
             <p style={{ fontSize: 14, lineHeight: 1.9 }}>{result.result.description}</p>
@@ -308,8 +309,8 @@ export default function Home() {
       )}
 
       {/* Footer */}
-      <footer className="mt-16 text-center" style={{ color: "#c0b0a0", fontSize: 13 }}>
-        <p>每一朵云，都值得被记住。</p>
+      <footer className="mt-16 text-center italic" style={{ color: "#a09070", fontSize: 12, letterSpacing: "0.1em" }}>
+        <p style={{ color: "#a09070" }}>每一朵云，都值得被记住。</p>
       </footer>
     </main>
   );
