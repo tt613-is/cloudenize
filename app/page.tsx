@@ -300,7 +300,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="mt-16 text-center italic" style={{ color: "#a09070", fontSize: 12, letterSpacing: "0.1em" }}>
-        <p style={{ color: "#a09070" }}>每一朵云，都值得被记住。</p>
+        <p>每一朵云，都值得被记住。</p>
       </footer>
     </main>
   );
