@@ -4,18 +4,12 @@ import React, { useRef, useState } from "react";
 import CloudCard from "@/components/CloudCard";
 import { FrameStyle, GenerateCardResponse } from "@/types/cloud";
 
-const FRAME_LABELS: Record<FrameStyle, string> = {
-  polaroid: "拍立得",
-  film:     "胶片",
-  instant:  "即时相机",
-};
-
 export default function Home() {
+  const frameStyle: FrameStyle = "polaroid";
   const [url, setUrl] = useState("");
   const [imageData, setImageData] = useState<string | null>(null); // base64 for uploaded files
   const [previewSrc, setPreviewSrc] = useState<string | null>(null); // display src
   const [fileName, setFileName] = useState<string | null>(null);
-  const [frameStyle, setFrameStyle] = useState<FrameStyle>("polaroid");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<GenerateCardResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -119,26 +113,6 @@ export default function Home() {
           onSubmit={handleGenerate}
           className="w-full max-w-md flex flex-col gap-5"
         >
-          {/* Frame style selector */}
-          <div className="flex gap-2 justify-center">
-            {(Object.keys(FRAME_LABELS) as FrameStyle[]).map((f) => (
-              <button
-                key={f}
-                type="button"
-                onClick={() => setFrameStyle(f)}
-                className="px-4 py-2 rounded-full text-sm transition-all"
-                style={{
-                  background: frameStyle === f ? "#5a4a3a" : "#ede8e0",
-                  color: frameStyle === f ? "#f8f6f2" : "#7a6a5a",
-                  letterSpacing: "0.05em",
-                  border: "none",
-                }}
-              >
-                {FRAME_LABELS[f]}
-              </button>
-            ))}
-          </div>
-
           {/* Upload area */}
           <input
             ref={fileInputRef}
@@ -279,8 +253,7 @@ export default function Home() {
         <div className="flex flex-col items-center gap-6 card-enter">
           {/* Confidence badge */}
           <div className="text-sm" style={{ color: "#a09080" }}>
-            识别置信度 {Math.round(result.result.confidence * 100)}% ·{" "}
-            <span style={{ color: "#5a4a3a" }}>{FRAME_LABELS[result.frameStyle]}风格</span>
+            识别置信度 {Math.round(result.result.confidence * 100)}%
           </div>
 
           {/* The card */}
