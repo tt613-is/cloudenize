@@ -17,6 +17,7 @@ export default function PolaroidFrame({ imageUrl, result }: Props) {
       className="flex flex-col bg-white shadow-2xl"
       style={{
         width: 384,
+        maxWidth: "calc(100vw - 32px)",
         padding: "24px 24px 72px 24px",
         fontFamily: "'Georgia', serif",
       }}
@@ -24,7 +25,7 @@ export default function PolaroidFrame({ imageUrl, result }: Props) {
       {/* Photo area */}
       <div
         className="relative overflow-hidden bg-gray-100"
-        style={{ width: 336, height: 336 }}
+        style={{ width: "100%", aspectRatio: "1" }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -44,7 +45,7 @@ export default function PolaroidFrame({ imageUrl, result }: Props) {
       </div>
 
       {/* Bottom text area */}
-      <div className="mt-5 flex flex-col gap-1.5" style={{ width: 336 }}>
+      <div className="mt-5 flex flex-col gap-1.5" style={{ width: "100%" }}>
         <div className="flex justify-between items-baseline">
           <span
             className="text-gray-800 font-semibold tracking-widest"
