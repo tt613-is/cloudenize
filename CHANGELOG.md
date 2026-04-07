@@ -2,6 +2,15 @@
 
 All notable changes to Cloudenize.
 
+## [0.1.1.0] - 2026-04-07
+
+### Added
+- **幻想云识别 (Fantasy Cloud Recognition):** App now recognizes non-real cloud images — cartoons, kawaii illustrations, 3D renders, art installations, etc. — and assigns one of 7 invented fantasy cloud types (梦境积云, 彩霞幻云, 星织云, 画境云, 糖棉云, 水墨幻云, 童话云). If no fixed type fits, GPT freely invents a poetic new name. Card format is identical to real cloud cards — fully immersive, no distinction shown.
+- **season: "梦境"** — fantasy clouds without seasonal cues now return 梦境 instead of 未知.
+
+### Changed
+- `lib/cloudIdentify.ts` prompt expanded from 10-type meteorological list to dual-section structure (real clouds + fantasy clouds + free-naming fallback). No API or UI changes.
+
 ## [0.1.0.0] - 2026-04-07
 
 ### Added

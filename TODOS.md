@@ -23,6 +23,8 @@
 
 ## Completed
 
+- Fantasy cloud recognition — 7 invented types + free-naming fallback (v0.1.1.0)
+
 - Removed frame selector, lock to polaroid (FINDING-001)
 - Hidden URL input behind ?debug=1 backdoor (FINDING-002)
 - Removed confidence badge and English cloud name (FINDING-003)
