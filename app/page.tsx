@@ -102,7 +102,12 @@ export default function Home() {
         // html2canvas renders them as opaque white overlays, producing a grey band
         // and a visible seam line in the saved image. Strip them for the capture.
         const style = el.ownerDocument.createElement("style");
-        style.textContent = ".polaroid-card::before, .polaroid-card::after { display: none !important; }";
+        // Also strip CSS filter from the photo — html2canvas has partial filter
+        // support that leaves a visible seam line in the saved image.
+        style.textContent = [
+          ".polaroid-card::before, .polaroid-card::after { display: none !important; }",
+          ".polaroid-card img { filter: none !important; }",
+        ].join(" ");
         el.ownerDocument.head.appendChild(style);
       },
     });
