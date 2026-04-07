@@ -241,7 +241,7 @@ export default function Home() {
               border: "none",
             }}
           >
-            {loading ? "识别中..." : "生成记忆卡片"}
+            {loading ? "认知中..." : "认识这朵云"}
           </button>
 
           {/* Loading indicator */}
@@ -298,7 +298,7 @@ export default function Home() {
                 letterSpacing: "0.1em",
               }}
             >
-              保存卡片
+              留住它
             </button>
             <button
               onClick={handleTryAnother}
