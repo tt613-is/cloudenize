@@ -41,7 +41,15 @@
       "Bash(git remote:*)",
       "Bash(git push:*)",
       "Bash(ssh-keygen -R github.com)",
-      "Bash(ssh-keyscan -t rsa github.com)"
+      "Bash(ssh-keyscan -t rsa github.com)",
+      "Skill(ship)",
+      "Bash(open /tmp/design-shotgun-cloudenize/variant-A-xingwu.html)",
+      "Bash(open /tmp/design-shotgun-cloudenize/variant-B-shenyejuan.html)",
+      "Bash(open /tmp/design-shotgun-cloudenize/variant-C-qingriben.html)",
+      "Bash(open /tmp/design-shotgun-cloudenize/variant-D-yinyan.html)",
+      "Bash(python3 -m http.server 7788)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:7788/variant-A-xingwu.html)",
+      "Bash(kill 18758)"
     ],
     "deny": [],
     "ask": []
