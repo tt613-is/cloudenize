@@ -30,9 +30,22 @@ export default function Home() {
     setUrl(""); // clear URL when file selected
     const reader = new FileReader();
     reader.onload = (ev) => {
-      const data = ev.target?.result as string;
-      setImageData(data);
-      setPreviewSrc(data);
+      const raw = ev.target?.result as string;
+      // Resize to max 1024px before sending — mobile photos can be 4-8MB and
+      // exceed Vercel's 4.5MB request body limit when base64-encoded.
+      const img = new Image();
+      img.onload = () => {
+        const MAX = 1024;
+        const scale = Math.min(1, MAX / Math.max(img.width, img.height));
+        const canvas = document.createElement("canvas");
+        canvas.width = Math.round(img.width * scale);
+        canvas.height = Math.round(img.height * scale);
+        canvas.getContext("2d")!.drawImage(img, 0, 0, canvas.width, canvas.height);
+        const compressed = canvas.toDataURL("image/jpeg", 0.85);
+        setImageData(compressed);
+        setPreviewSrc(compressed);
+      };
+      img.src = raw;
     };
     reader.readAsDataURL(file);
   }
