@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CloudCard from "@/components/CloudCard";
 import { FrameStyle, GenerateCardResponse } from "@/types/cloud";
 
@@ -13,8 +13,13 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<GenerateCardResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [isDebugMode, setIsDebugMode] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    setIsDebugMode(new URLSearchParams(window.location.search).get("debug") === "1");
+  }, []);
 
   const hasImage = !!imageData || !!url.trim();
 
@@ -177,8 +182,8 @@ export default function Home() {
             </button>
           )}
 
-          {/* URL input (secondary) */}
-          {!imageData && (
+          {/* URL input (debug mode only — add ?debug=1 to URL) */}
+          {isDebugMode && !imageData && (
             <div className="flex flex-col gap-1">
               <div className="flex items-center gap-3">
                 <div className="flex-1 h-px" style={{ background: "#ddd8d0" }} />
