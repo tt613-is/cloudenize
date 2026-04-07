@@ -103,6 +103,9 @@ export default function Home() {
         const style = document.createElement("style");
         style.textContent = ".polaroid-card::after { display: none !important; }";
         el.ownerDocument.head.appendChild(style);
+        // Remove crossOrigin from images — base64 data URLs don't need CORS,
+        // but crossOrigin="anonymous" causes the cloned image to fail loading
+        el.querySelectorAll("img").forEach((img) => img.removeAttribute("crossorigin"));
       },
     });
     const link = document.createElement("a");
