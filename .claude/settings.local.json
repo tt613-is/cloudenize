@@ -37,7 +37,11 @@
       "Bash(npm install:*)",
       "Bash(npm run:*)",
       "Skill(browse)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "Bash(ssh-keygen -R github.com)",
+      "Bash(ssh-keyscan -t rsa github.com)"
     ],
     "deny": [],
     "ask": []
