@@ -256,11 +256,6 @@ export default function Home() {
       {/* Card result */}
       {result && !loading && (
         <div className="flex flex-col items-center gap-6 card-enter">
-          {/* Confidence badge */}
-          <div className="text-sm" style={{ color: "#a09080" }}>
-            识别置信度 {Math.round(result.result.confidence * 100)}%
-          </div>
-
           {/* The card */}
           <CloudCard
             ref={cardRef}
@@ -306,9 +301,6 @@ export default function Home() {
           >
             <div className="font-medium mb-1" style={{ color: "#5a4a3a" }}>
               {result.result.cloudType}
-              <span className="ml-2 font-normal text-sm" style={{ color: "#b0a090" }}>
-                {result.result.cloudTypeEn}
-              </span>
             </div>
             <p style={{ fontSize: 14, lineHeight: 1.9 }}>{result.result.description}</p>
           </div>
