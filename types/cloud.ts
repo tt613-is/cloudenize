@@ -1,4 +1,5 @@
 export type CloudType =
+  // Real meteorological types
   | "卷云"
   | "积云"
   | "层云"
@@ -9,7 +10,17 @@ export type CloudType =
   | "高层云"
   | "雨层云"
   | "层积云"
-  | "未知";
+  // Fantasy cloud types
+  | "梦境积云"
+  | "彩霞幻云"
+  | "星织云"
+  | "画境云"
+  | "糖棉云"
+  | "水墨幻云"
+  | "童话云"
+  // Fallback
+  | "未知"
+  | (string & Record<never, never>);
 
 export type FrameStyle = "polaroid" | "film" | "instant";
 

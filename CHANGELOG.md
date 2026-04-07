@@ -10,6 +10,7 @@ All notable changes to Cloudenize.
 
 ### Changed
 - `lib/cloudIdentify.ts` prompt expanded from 10-type meteorological list to dual-section structure (real clouds + fantasy clouds + free-naming fallback). No API or UI changes.
+- `types/cloud.ts` `CloudType` union widened to include all 7 fantasy type names and an open string fallback for GPT-invented names.
 
 ## [0.1.0.0] - 2026-04-07
 
